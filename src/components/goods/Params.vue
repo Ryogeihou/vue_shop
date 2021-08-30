@@ -259,7 +259,7 @@ export default {
 
       res.data.forEach(
         item => {
-          item.attr_vals = item.attr_vals ? item.attr_vals.split(',') : []
+          item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
           // 控制单个文本框的显示与隐藏
           item.inputVisible = false
           // 单个文本框中的值
@@ -381,7 +381,7 @@ export default {
         {
           attr_name: row.attr_name,
           attr_sel: row.attr_sel,
-          attr_vals: row.attr_vals.join(',')
+          attr_vals: row.attr_vals.join(' ')
         })
       if (res.meta.status !== 200) {
         console.log(res, this.cateId, row.attr_id)
